@@ -15,16 +15,16 @@
 """SparkClient for Kubeflow SDK."""
 
 from collections.abc import Iterator
-import logging
 
 from pyspark.sql import SparkSession
 
+from kubeflow.common.logging import get_logger
 from kubeflow.common.types import KubernetesBackendConfig
 from kubeflow.spark.backends.kubernetes import KubernetesBackend
 from kubeflow.spark.backends.kubernetes.utils import validate_spark_connect_url
 from kubeflow.spark.types.types import Driver, Executor, SparkConnectInfo
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class SparkClient:

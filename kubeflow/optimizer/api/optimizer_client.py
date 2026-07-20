@@ -13,9 +13,9 @@
 # limitations under the License.
 
 from collections.abc import Callable, Iterator
-import logging
 from typing import Any
 
+from kubeflow.common.logging import get_logger
 from kubeflow.common.types import KubernetesBackendConfig
 from kubeflow.optimizer.backends.kubernetes.backend import KubernetesBackend
 from kubeflow.optimizer.constants import constants
@@ -28,7 +28,7 @@ from kubeflow.optimizer.types.optimization_types import (
 )
 from kubeflow.trainer.types.types import Event, TrainJobTemplate
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class OptimizerClient:
